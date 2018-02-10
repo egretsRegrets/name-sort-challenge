@@ -1,0 +1,7 @@
+Problem:  We have had various groups at Nielsen manually enter user names. Unfortunately there was no quality control or validation and we have a number of names that are duplicated. 
+
+Task:  The project manager would like a sorted list of the unique names. We need a method that will perform this functionality.  The results of this method should be output to an html page as well as the console. 
+
+Sample List of Names: ['Nick', 'jake', 'RAY', 'Kate', 'Nick',  'Jeremy', 'Ryan', 'nick', 'AMOL', 'rAY', 'VIANNEY', 'Samuel', 'ryan', 'Shilpika', 'nick', 'THOMAS', 'tom', 'james', 'JERM', 'amOl', 'kate', 'SCOTT', 'Jenifer', 'bill', 'jenny', 'STEVEN']
+
+- Output list should be sorted by alpha
