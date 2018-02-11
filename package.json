@@ -1,11 +1,18 @@
 {
-  "name": "name-sort-challenge",
-  "version": "1.0.0",
-  "main": "main.js",
   "author": "mercantilism <samuel.galen.gardner@gmail.com>",
-  "license": "MIT",
+  "scripts": {
+    "build": "webpack -d"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-dynamic-import-webpack": "^1.0.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.1"
+  },
+  "dependencies": {
+    "webpack": "^3.11.0"
   }
 }
