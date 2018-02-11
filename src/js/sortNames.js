@@ -3,21 +3,20 @@ import { mergeSort, alphaCompare } from './manualSort';
 export default function uniqueNamesFromCollection(collection) {
   // map names in collection to lowercase
   const lowerCaseCollection = collection.map(name => name.toLowerCase());
-  const uniqueNames = lowerCaseCollection.reduce((uniqueNames, name, nameIndex, allNames) => {
+
+  const uniqueNames = lowerCaseCollection.filter((name, nameIndex) => {
     /**
-     * allNames.slice(0, nameIndex) gives us a look at the left-hand side of our input array
-     * allNames.slice(nameIndex + 1) gives us a look at the right-hand side of our input array
-     * if we dont see another instance of our current name either behind or ahead of it, we can safely push it onto the accumulator
+     * lowerCaseCollection.slice(0, nameIndex) gives us a look at the left-hand side of our input array
+     * lowerCaseCollection.slice(nameIndex + 1) gives us a look at the right-hand side of our input array
+     * if we dont see another instance of our current name either behind or ahead of it, we can safely filter it into our return array
      */
-    if (!allNames.slice(0, nameIndex).includes(name) && !allNames.slice(nameIndex + 1).includes(name)) {
-      return uniqueNames.concat(name);
+    if (
+      !lowerCaseCollection.slice(0, nameIndex).includes(name) &&
+      !lowerCaseCollection.slice(nameIndex + 1).includes(name)
+    ) {
+      return name;
     }
-    /*
-    because uniqueNames is the accumulator, even if we don't add a name to the uniqueNames array we need to return it as it is
-    otherwise there will be an implicit return of undefined, and we will no longer be able to perform concat ops with it
-    */
-    return uniqueNames;
-  }, []);
+  });
 
   function protoSort() {
     /**
