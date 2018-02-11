@@ -40,11 +40,11 @@ export function mergeSort(
 
 export function alphaCompare(left, right, wordLength) {
   // if left[0] has a lesser character code than right[0] we can exit with -1, signaling that left will be sorted to the left
-  if (left.charCodeAt(0) < right.charCodeAt(0)) {
+  if (left.toLowerCase().charCodeAt(0) < right.toLowerCase().charCodeAt(0)) {
     return -1;
   }
   // if our two letters have the same charCode and are therefore the same, we need to compare the next letter
-  if (left.charCodeAt(0) === right.charCodeAt(0)) {
+  if (left.toLowerCase().charCodeAt(0) === right.toLowerCase().charCodeAt(0)) {
     /**
      * We track the length of our shortest word to make sure we don't accidentally unshift all the letters of a word.
      * wordLength will only be passed in as an arg if we run alphaCompare recursively,
