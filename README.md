@@ -11,3 +11,5 @@ sortNames.js contains the function uniqueNamesFromCollection() - this function i
 data.json contains the sample input provided
 
 spec.txt contains a copy of the spec as it was provided
+
+There is also a second branch, respect-input-case; the code on this branch performs the same sort but maintains the case of the original input names in the output array.
